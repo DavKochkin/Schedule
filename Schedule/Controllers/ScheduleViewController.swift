@@ -40,11 +40,12 @@ class ScheduleViewController: UIViewController {
         calendar.scope = .week
         
         setConstraints()
+        swipeAction()
         
-        showHideButton.addTarget(self, action: #selector(showHideButtonTappes), for: .touchUpInside)
+        showHideButton.addTarget(self, action: #selector(showHideButtonTapped), for: .touchUpInside)
     }
     
-    @objc func showHideButtonTappes() {
+    @objc func showHideButtonTapped() {
         
         if calendar.scope == .week {
             calendar.setScope(.month, animated: true)
@@ -52,6 +53,31 @@ class ScheduleViewController: UIViewController {
         } else {
             calendar.setScope(.week, animated: true)
             showHideButton.setTitle("Open calendar", for: .normal)
+        }
+    }
+    
+// MARK: SwipeTapGestureRecognizer
+    
+    func swipeAction() {
+        
+        let swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe))
+        swipeUp.direction = .up
+        calendar.addGestureRecognizer(swipeUp)
+        
+        let swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe))
+        swipeDown.direction = .down
+        calendar.addGestureRecognizer(swipeDown)
+    }
+    
+    @objc func handleSwipe(gesture: UISwipeGestureRecognizer) {
+        
+        switch gesture.direction {
+        case .up:
+            showHideButtonTapped()
+        case .down:
+            showHideButtonTapped()
+        default:
+            break
         }
     }
 }
