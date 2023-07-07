@@ -48,6 +48,83 @@ class ScheduleTableViewCell: UITableViewCell {
         return label
     }()
     
+    let typeLabel: UILabel = {
+       let label = UILabel()
+        label.text = "Type:"
+        label.textColor = .black
+        label.font = UIFont(name: "Avenir Next", size: 14)
+        label.textAlignment = .right
+        label.adjustsFontSizeToFitWidth = true
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.backgroundColor = .red
+        
+        return label
+    }()
+    
+    let lessonType: UILabel = {
+       let label = UILabel()
+        label.text = "Lesson"
+        label.textColor = .black
+        label.font = UIFont(name: "Avenir Next Demi Bold", size: 14)
+        label.textAlignment = .left
+        label.adjustsFontSizeToFitWidth = true
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.backgroundColor = .red
+        
+        return label
+    }()
+    
+    let buildingLabel: UILabel = {
+       let label = UILabel()
+        label.text = "Building"
+        label.textColor = .black
+        label.font = UIFont(name: "Avenir Next", size: 14)
+        label.textAlignment = .right
+        label.adjustsFontSizeToFitWidth = true
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.backgroundColor = .red
+        
+        return label
+    }()
+    
+    let lessonBuilding: UILabel = {
+       let label = UILabel()
+        label.text = "1"
+        label.textColor = .black
+        label.font = UIFont(name: "Avenir Next Demi Bold", size: 14)
+        label.textAlignment = .left
+        label.adjustsFontSizeToFitWidth = true
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.backgroundColor = .red
+        
+        return label
+    }()
+    
+    let classLabel: UILabel = {
+       let label = UILabel()
+        label.text = "Class"
+        label.textColor = .black
+        label.font = UIFont(name: "Avenir Next", size: 14)
+        label.textAlignment = .right
+        label.adjustsFontSizeToFitWidth = true
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.backgroundColor = .red
+        
+        return label
+    }()
+    
+    let lessonClass: UILabel = {
+       let label = UILabel()
+        label.text = "101"
+        label.textColor = .black
+        label.font = UIFont(name: "Avenir Next", size: 14)
+        label.textAlignment = .left
+        label.adjustsFontSizeToFitWidth = true
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.backgroundColor = .red
+        
+        return label
+    }()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -81,6 +158,16 @@ class ScheduleTableViewCell: UITableViewCell {
             lessonTime.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 5),
             lessonTime.widthAnchor.constraint(equalToConstant: 100),
             lessonTime.heightAnchor.constraint(equalToConstant: 25)
+        ])
+        
+        let bottomStackView = UIStackView(arrangedSubviews: [typeLabel, lessonType, buildingLabel, lessonBuilding, classLabel, lessonClass], axis: .horizontal, spacing: 5, distribution: .fillProportionally)
+        
+        self.addSubview(bottomStackView)
+        NSLayoutConstraint.activate([
+            bottomStackView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -10),
+            bottomStackView.leadingAnchor.constraint(equalTo: lessonTime.trailingAnchor, constant: 5),
+            bottomStackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -5),
+            bottomStackView.heightAnchor.constraint(equalToConstant: 25)
         ])
 //        self.addSubview(lessonName)
 //        NSLayoutConstraint.activate([
