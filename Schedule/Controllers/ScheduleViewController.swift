@@ -30,6 +30,7 @@ class ScheduleViewController: UIViewController {
     
     let tableView: UITableView = {
         let tableView = UITableView()
+        tableView.bounces = false
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
@@ -103,14 +104,7 @@ extension ScheduleViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: idScheduleCell, for: indexPath) as! ScheduleTableViewCell
-        
-        switch indexPath.row {
-        case 0: cell.backgroundColor = .orange
-        case 1: cell.backgroundColor = .systemMint
-        default:
-            cell.backgroundColor = .systemCyan
-        }
-        
+    
         return cell
     }
     

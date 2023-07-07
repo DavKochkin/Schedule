@@ -23,6 +23,7 @@ class ScheduleTableViewCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
        
         setConstraints()
+        self.selectionStyle = .none
     }
     
     required init?(coder: NSCoder) {
