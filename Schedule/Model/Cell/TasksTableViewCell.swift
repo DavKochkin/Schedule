@@ -19,6 +19,9 @@ class TasksTableViewCell: UITableViewCell {
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
+    
+    weak var cellTaskDelegate: PressReadyTaskButtonProtocol?
+    var index: IndexPath?
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -36,7 +39,8 @@ class TasksTableViewCell: UITableViewCell {
     }
     
     @objc func readyButtonTapped() {
-        print("Tap")
+        guard let index = index else { return }
+        cellTaskDelegate?.readyButtonTappe(indexPath: index)
     }
     
     func setConstraints() {

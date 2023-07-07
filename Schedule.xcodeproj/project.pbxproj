@@ -12,6 +12,7 @@
 		041CC3692A583D2800CBBA04 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041CC3682A583D2800CBBA04 /* UILabel.swift */; };
 		041CC36B2A58404E00CBBA04 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041CC36A2A58404E00CBBA04 /* UIFont.swift */; };
 		041CC36D2A588B4400CBBA04 /* TasksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041CC36C2A588B4400CBBA04 /* TasksTableViewCell.swift */; };
+		041CC3702A58906800CBBA04 /* PressButtonProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041CC36F2A58906800CBBA04 /* PressButtonProtocols.swift */; };
 		044E3CA92A556CC900593BE1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044E3CA82A556CC900593BE1 /* AppDelegate.swift */; };
 		044E3CAB2A556CC900593BE1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044E3CAA2A556CC900593BE1 /* SceneDelegate.swift */; };
 		044E3CAD2A556CC900593BE1 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044E3CAC2A556CC900593BE1 /* MainTabBarController.swift */; };
@@ -29,6 +30,7 @@
 		041CC3682A583D2800CBBA04 /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
 		041CC36A2A58404E00CBBA04 /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 		041CC36C2A588B4400CBBA04 /* TasksTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksTableViewCell.swift; sourceTree = "<group>"; };
+		041CC36F2A58906800CBBA04 /* PressButtonProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PressButtonProtocols.swift; sourceTree = "<group>"; };
 		044E3CA52A556CC900593BE1 /* Schedule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Schedule.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		044E3CA82A556CC900593BE1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		044E3CAA2A556CC900593BE1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -91,6 +93,14 @@
 			path = UIKit;
 			sourceTree = "<group>";
 		};
+		041CC36E2A58904A00CBBA04 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				041CC36F2A58906800CBBA04 /* PressButtonProtocols.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		044E3C9C2A556CC800593BE1 = {
 			isa = PBXGroup;
 			children = (
@@ -116,6 +126,7 @@
 				044E3CBD2A55724600593BE1 /* Controllers */,
 				041CC35E2A5816ED00CBBA04 /* Model */,
 				041CC3622A5831A900CBBA04 /* Extensions  */,
+				041CC36E2A58904A00CBBA04 /* Protocols */,
 				044E3CBE2A55727F00593BE1 /* Resources */,
 			);
 			path = Schedule;
@@ -293,6 +304,7 @@
 				041CC36B2A58404E00CBBA04 /* UIFont.swift in Sources */,
 				044E3CC42A55762500593BE1 /* ContactsViewController.swift in Sources */,
 				041CC36D2A588B4400CBBA04 /* TasksTableViewCell.swift in Sources */,
+				041CC3702A58906800CBBA04 /* PressButtonProtocols.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

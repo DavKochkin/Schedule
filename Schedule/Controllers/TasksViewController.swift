@@ -102,14 +102,25 @@ extension TasksViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: idTasksCell, for: indexPath) 
-        
+        let cell = tableView.dequeueReusableCell(withIdentifier: idTasksCell, for: indexPath) as! TasksTableViewCell
+        cell.cellTaskDelegate = self
+        cell.index = indexPath
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80
     }
+}
+
+// MARK: PressReadyTaskButtonProtocol
+
+extension TasksViewController: PressReadyTaskButtonProtocol {
+    func readyButtonTappe(indexPath: IndexPath) {
+        print("Tap")
+    }
+    
+    
 }
 
 // MARK: FSCalendarDataSource, FSCalendarDelegate
