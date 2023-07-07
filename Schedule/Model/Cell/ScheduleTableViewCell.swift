@@ -35,6 +35,18 @@ class ScheduleTableViewCell: UITableViewCell {
         return label
     }()
     
+    let lessonTime: UILabel = {
+       let label = UILabel()
+        label.text = "08:00"
+        label.textColor = .black
+        label.font = UIFont(name: "Avenir Next", size: 20)
+        label.textAlignment = .left
+        label.adjustsFontSizeToFitWidth = true
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.backgroundColor = .red
+        
+        return label
+    }()
     
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -52,23 +64,24 @@ class ScheduleTableViewCell: UITableViewCell {
     
     func setConstraints() {
         
-        let stackView = UIStackView()
-        stackView.addArrangedSubview(lessonName)
-        stackView.addArrangedSubview(teacherName)
-        stackView.axis = .horizontal
-        stackView.spacing = 10
-        stackView.distribution = .fillEqually
-        stackView.translatesAutoresizingMaskIntoConstraints = false
+        let topStackView = UIStackView(arrangedSubviews: [lessonName, teacherName], axis: .horizontal, spacing: 10, distribution: .fillEqually)
+    
         
-        
-        self.addSubview(stackView)
+        self.addSubview(topStackView)
         NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalTo: self.topAnchor, constant: 10),
-            stackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 5),
-            stackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -5),
-            stackView.heightAnchor.constraint(equalToConstant: 25)
+            topStackView.topAnchor.constraint(equalTo: self.topAnchor, constant: 10),
+            topStackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 5),
+            topStackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -5),
+            topStackView.heightAnchor.constraint(equalToConstant: 25)
         ])
         
+        self.addSubview(lessonTime)
+        NSLayoutConstraint.activate([
+            lessonTime.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -10),
+            lessonTime.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 5),
+            lessonTime.widthAnchor.constraint(equalToConstant: 100),
+            lessonTime.heightAnchor.constraint(equalToConstant: 25)
+        ])
 //        self.addSubview(lessonName)
 //        NSLayoutConstraint.activate([
 //            lessonName.topAnchor.constraint(equalTo: self.topAnchor, constant: 10),
