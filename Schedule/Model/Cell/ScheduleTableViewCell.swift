@@ -52,21 +52,38 @@ class ScheduleTableViewCell: UITableViewCell {
     
     func setConstraints() {
         
-        self.addSubview(lessonName)
+        let stackView = UIStackView()
+        stackView.addArrangedSubview(lessonName)
+        stackView.addArrangedSubview(teacherName)
+        stackView.axis = .horizontal
+        stackView.spacing = 10
+        stackView.distribution = .fillEqually
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        
+        
+        self.addSubview(stackView)
         NSLayoutConstraint.activate([
-            lessonName.topAnchor.constraint(equalTo: self.topAnchor, constant: 10),
-            lessonName.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 5),
-            lessonName.widthAnchor.constraint(equalToConstant: self.frame.width / 2 - 10),
-            lessonName.heightAnchor.constraint(equalToConstant: 25)
+            stackView.topAnchor.constraint(equalTo: self.topAnchor, constant: 10),
+            stackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 5),
+            stackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -5),
+            stackView.heightAnchor.constraint(equalToConstant: 25)
         ])
         
-        self.addSubview(teacherName)
-        NSLayoutConstraint.activate([
-            teacherName.topAnchor.constraint(equalTo: self.topAnchor, constant: 10),
-            teacherName.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -5),
-            teacherName.widthAnchor.constraint(equalToConstant: self.frame.width / 2 - 10),
-            teacherName.heightAnchor.constraint(equalToConstant: 25)
-        ])
+//        self.addSubview(lessonName)
+//        NSLayoutConstraint.activate([
+//            lessonName.topAnchor.constraint(equalTo: self.topAnchor, constant: 10),
+//            lessonName.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 5),
+//            lessonName.widthAnchor.constraint(equalToConstant: self.frame.width / 2 - 10),
+//            lessonName.heightAnchor.constraint(equalToConstant: 25)
+//        ])
+//
+//        self.addSubview(teacherName)
+//        NSLayoutConstraint.activate([
+//            teacherName.topAnchor.constraint(equalTo: self.topAnchor, constant: 10),
+//            teacherName.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -5),
+//            teacherName.widthAnchor.constraint(equalToConstant: self.frame.width / 2 - 10),
+//            teacherName.heightAnchor.constraint(equalToConstant: 25)
+//        ])
         
     }
 }
