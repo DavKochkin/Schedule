@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		041CC3612A58171400CBBA04 /* ScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041CC3602A58171400CBBA04 /* ScheduleTableViewCell.swift */; };
 		044E3CA92A556CC900593BE1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044E3CA82A556CC900593BE1 /* AppDelegate.swift */; };
 		044E3CAB2A556CC900593BE1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044E3CAA2A556CC900593BE1 /* SceneDelegate.swift */; };
 		044E3CAD2A556CC900593BE1 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044E3CAC2A556CC900593BE1 /* MainTabBarController.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		041CC3602A58171400CBBA04 /* ScheduleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewCell.swift; sourceTree = "<group>"; };
 		044E3CA52A556CC900593BE1 /* Schedule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Schedule.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		044E3CA82A556CC900593BE1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		044E3CAA2A556CC900593BE1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -46,6 +48,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		041CC35E2A5816ED00CBBA04 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				041CC35F2A5816F500CBBA04 /* Cell */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		041CC35F2A5816F500CBBA04 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				041CC3602A58171400CBBA04 /* ScheduleTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		044E3C9C2A556CC800593BE1 = {
 			isa = PBXGroup;
 			children = (
@@ -69,6 +87,7 @@
 			children = (
 				044E3CBC2A55722B00593BE1 /* Application */,
 				044E3CBD2A55724600593BE1 /* Controllers */,
+				041CC35E2A5816ED00CBBA04 /* Model */,
 				044E3CBE2A55727F00593BE1 /* Resources */,
 			);
 			path = Schedule;
@@ -110,7 +129,6 @@
 				A09E8CD15CA731569935A318 /* Pods-Schedule.debug.xcconfig */,
 				79B61A6F931D673D56BEFE65 /* Pods-Schedule.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -237,6 +255,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				044E3CAD2A556CC900593BE1 /* MainTabBarController.swift in Sources */,
+				041CC3612A58171400CBBA04 /* ScheduleTableViewCell.swift in Sources */,
 				044E3CA92A556CC900593BE1 /* AppDelegate.swift in Sources */,
 				044E3CC22A55761700593BE1 /* TasksViewController.swift in Sources */,
 				044E3CAB2A556CC900593BE1 /* SceneDelegate.swift in Sources */,
