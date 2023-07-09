@@ -60,8 +60,10 @@ class ScheduleViewController: UIViewController {
     }
     
     @objc func AddButtonTapped() {
-        print("TAP")
-    }
+        
+        let scheduleOption = OptionsScheduleTableViewController()
+        navigationController?.pushViewController(scheduleOption, animated: true)
+    } 
     
     @objc func showHideButtonTapped() {
         
