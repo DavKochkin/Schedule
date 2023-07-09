@@ -10,6 +10,7 @@ import UIKit
 class OptionsScheduleTableViewController: UITableViewController {
     
     let idOptionsScheduleCell = "idOptionsScheduleCell"
+    let idOptionScheduleHeader = "idOptionScheduleHeader"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +20,7 @@ class OptionsScheduleTableViewController: UITableViewController {
         tableView.backgroundColor = .systemGray6
         tableView.separatorStyle = .none
         tableView.register(OptionsScheduleTableViewCell.self, forCellReuseIdentifier: idOptionsScheduleCell)
+        tableView.register(HeaderOptionsScheduleTableViewCell.self, forHeaderFooterViewReuseIdentifier: idOptionScheduleHeader)
         
         title = "Option Schedule"
         
@@ -47,6 +49,15 @@ class OptionsScheduleTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 44
+    }
+    
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: idOptionScheduleHeader) as! HeaderOptionsScheduleTableViewCell
+        return header
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 25
     }
     
 }
