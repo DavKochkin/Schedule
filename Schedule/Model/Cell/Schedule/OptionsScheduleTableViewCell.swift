@@ -24,6 +24,15 @@ class OptionsScheduleTableViewCell: UITableViewCell {
         return label
     }()
     
+    let repeatSwitch: UISwitch = {
+        let repeatSwitch = UISwitch()
+        repeatSwitch.isOn = true
+        repeatSwitch.isHidden = true
+        repeatSwitch.onTintColor = .systemMint
+        repeatSwitch.translatesAutoresizingMaskIntoConstraints = false
+       return repeatSwitch
+    }()
+    
     let cellNameArray = [["Date", "Time"],
                          ["Name", "Type", "Building", "Audience"],
                          ["Teacher Name"],
@@ -36,6 +45,8 @@ class OptionsScheduleTableViewCell: UITableViewCell {
         setConstraints()
         self.selectionStyle = .none
         self.backgroundColor = .clear
+        
+        repeatSwitch.addTarget(self, action: #selector(switchChange(paramTarget:)), for: .valueChanged)
     }
     
     required init?(coder: NSCoder) {
@@ -47,6 +58,18 @@ class OptionsScheduleTableViewCell: UITableViewCell {
         
         if indexPath == [3,0] {
             backgroundViewCell.backgroundColor = .systemMint
+        }
+        
+        if indexPath == [4,0] {
+            repeatSwitch.isHidden = false
+        }
+    }
+    
+    @objc func switchChange(paramTarget: UISwitch) {
+        if paramTarget.isOn {
+            print("ON")
+        } else {
+        print("OFF")
         }
     }
     
@@ -63,6 +86,12 @@ class OptionsScheduleTableViewCell: UITableViewCell {
         NSLayoutConstraint.activate([
             nameCellLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor),
             nameCellLabel.leadingAnchor.constraint(equalTo: backgroundViewCell.leadingAnchor, constant: 15)
+        ])
+        
+        self.contentView.addSubview(repeatSwitch)
+        NSLayoutConstraint.activate([
+            repeatSwitch.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+            repeatSwitch.trailingAnchor.constraint(equalTo: backgroundViewCell.trailingAnchor, constant: -20)
         ])
     }
 }
