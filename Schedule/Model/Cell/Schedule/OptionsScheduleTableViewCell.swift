@@ -21,9 +21,14 @@ class OptionsScheduleTableViewCell: UITableViewCell {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 16)
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Cell"
         return label
     }()
+    
+    let cellNameArray = [["Date", "Time"],
+                         ["Name", "Type", "Building", "Audience"],
+                         ["Teacher Name"],
+                         [""],
+                         ["Repeat every 7 days"]]
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -35,6 +40,14 @@ class OptionsScheduleTableViewCell: UITableViewCell {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func cellConfigure(indexPath: IndexPath) {
+        nameCellLabel.text = cellNameArray[indexPath.section][indexPath.row]
+        
+        if indexPath == [3,0] {
+            backgroundViewCell.backgroundColor = .systemMint
+        }
     }
     
     func setConstraints() {

@@ -16,7 +16,7 @@ class ScheduleTableViewCell: UITableViewCell {
     let lessonType = UILabel(text: "Lesson", font: .avenirNextDemiBold14())
     let buildingLabel = UILabel(text: "Building", font: .avenirNext14(), alignment: .right)
     let lessonBuilding = UILabel(text: "1", font: .avenirNextDemiBold14())
-    let classLabel = UILabel(text: "Class", font: .avenirNext14(), alignment: .right)
+    let classLabel = UILabel(text: "Audience", font: .avenirNext14(), alignment: .right)
     let lessonClass = UILabel(text: "101", font: .avenirNextDemiBold14())
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {

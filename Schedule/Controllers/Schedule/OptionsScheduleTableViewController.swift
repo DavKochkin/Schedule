@@ -12,6 +12,7 @@ class OptionsScheduleTableViewController: UITableViewController {
     let idOptionsScheduleCell = "idOptionsScheduleCell"
     let idOptionScheduleHeader = "idOptionScheduleHeader"
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -44,6 +45,7 @@ class OptionsScheduleTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: idOptionsScheduleCell, for: indexPath) as! OptionsScheduleTableViewCell
+        cell.cellConfigure(indexPath: indexPath)
         return cell
     }
     
@@ -53,6 +55,7 @@ class OptionsScheduleTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: idOptionScheduleHeader) as! HeaderOptionsScheduleTableViewCell
+        header.headerConfigure(section: section)
         return header
     }
     
