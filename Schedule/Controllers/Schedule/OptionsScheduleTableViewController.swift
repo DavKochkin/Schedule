@@ -11,6 +11,7 @@ class OptionsScheduleTableViewController: UITableViewController {
     
     let idOptionsScheduleCell = "idOptionsScheduleCell"
     let idOptionScheduleHeader = "idOptionScheduleHeader"
+    let headerNameArray = ["DATE AND TIME", "LESSON", "TEACHER", "COLOR", "PERIOD"]
     
     
     override func viewDidLoad() {
@@ -22,10 +23,9 @@ class OptionsScheduleTableViewController: UITableViewController {
         tableView.separatorStyle = .none
         tableView.bounces = false 
         tableView.register(OptionsScheduleTableViewCell.self, forCellReuseIdentifier: idOptionsScheduleCell)
-        tableView.register(HeaderOptionsScheduleTableViewCell.self, forHeaderFooterViewReuseIdentifier: idOptionScheduleHeader)
+        tableView.register(HeaderOptionssTableViewCell.self, forHeaderFooterViewReuseIdentifier: idOptionScheduleHeader)
         
         title = "Option Schedule"
-        
         
     }
     
@@ -55,8 +55,8 @@ class OptionsScheduleTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: idOptionScheduleHeader) as! HeaderOptionsScheduleTableViewCell
-        header.headerConfigure(section: section)
+        let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: idOptionScheduleHeader) as! HeaderOptionssTableViewCell
+        header.headerConfigure(nameArray: headerNameArray, section: section)
         return header
     }
     
