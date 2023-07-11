@@ -63,4 +63,17 @@ class OptionsScheduleTableViewController: UITableViewController {
         return 25
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let cell = tableView.cellForRow(at: indexPath) as! OptionsScheduleTableViewCell
+        
+        switch indexPath {
+        case [0,0]: alertDate(label: cell.nameCellLabel) { (numberWeekday, date) in
+            print(numberWeekday, date)
+        }
+        default:
+            print("ERROR")
+        }
+    }
+    
 }

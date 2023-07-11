@@ -16,6 +16,7 @@
 		041CC3722A5B2FEC00CBBA04 /* OptionsScheduleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041CC3712A5B2FEC00CBBA04 /* OptionsScheduleTableViewController.swift */; };
 		041CC37A2A5B351700CBBA04 /* OptionsScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041CC3792A5B351700CBBA04 /* OptionsScheduleTableViewCell.swift */; };
 		041CC37C2A5B3A0C00CBBA04 /* HeaderOptionsScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041CC37B2A5B3A0C00CBBA04 /* HeaderOptionsScheduleTableViewCell.swift */; };
+		041CC37F2A5D4A6B00CBBA04 /* AlertDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041CC37E2A5D4A6B00CBBA04 /* AlertDate.swift */; };
 		044E3CA92A556CC900593BE1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044E3CA82A556CC900593BE1 /* AppDelegate.swift */; };
 		044E3CAB2A556CC900593BE1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044E3CAA2A556CC900593BE1 /* SceneDelegate.swift */; };
 		044E3CAD2A556CC900593BE1 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044E3CAC2A556CC900593BE1 /* MainTabBarController.swift */; };
@@ -37,6 +38,7 @@
 		041CC3712A5B2FEC00CBBA04 /* OptionsScheduleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsScheduleTableViewController.swift; sourceTree = "<group>"; };
 		041CC3792A5B351700CBBA04 /* OptionsScheduleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsScheduleTableViewCell.swift; sourceTree = "<group>"; };
 		041CC37B2A5B3A0C00CBBA04 /* HeaderOptionsScheduleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderOptionsScheduleTableViewCell.swift; sourceTree = "<group>"; };
+		041CC37E2A5D4A6B00CBBA04 /* AlertDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertDate.swift; sourceTree = "<group>"; };
 		044E3CA52A556CC900593BE1 /* Schedule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Schedule.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		044E3CA82A556CC900593BE1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		044E3CAA2A556CC900593BE1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -67,6 +69,7 @@
 		041CC35E2A5816ED00CBBA04 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				041CC37D2A5D4A5C00CBBA04 /* Alert */,
 				041CC35F2A5816F500CBBA04 /* Cell */,
 			);
 			path = Model;
@@ -156,6 +159,14 @@
 			children = (
 			);
 			path = Contacts;
+			sourceTree = "<group>";
+		};
+		041CC37D2A5D4A5C00CBBA04 /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				041CC37E2A5D4A6B00CBBA04 /* AlertDate.swift */,
+			);
+			path = Alert;
 			sourceTree = "<group>";
 		};
 		044E3C9C2A556CC800593BE1 = {
@@ -350,6 +361,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				041CC37F2A5D4A6B00CBBA04 /* AlertDate.swift in Sources */,
 				044E3CAD2A556CC900593BE1 /* MainTabBarController.swift in Sources */,
 				041CC3612A58171400CBBA04 /* ScheduleTableViewCell.swift in Sources */,
 				044E3CA92A556CC900593BE1 /* AppDelegate.swift in Sources */,
