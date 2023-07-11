@@ -21,6 +21,7 @@
 		041CC3832A5D66C000CBBA04 /* AlertForCellName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041CC3822A5D66C000CBBA04 /* AlertForCellName.swift */; };
 		041CC3852A5D69D200CBBA04 /* ScheduleColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041CC3842A5D69D200CBBA04 /* ScheduleColorViewController.swift */; };
 		041CC3872A5D6AB100CBBA04 /* TeachersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041CC3862A5D6AB100CBBA04 /* TeachersViewController.swift */; };
+		041CC38B2A5D862C00CBBA04 /* ColorScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041CC38A2A5D862C00CBBA04 /* ColorScheduleTableViewCell.swift */; };
 		044E3CA92A556CC900593BE1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044E3CA82A556CC900593BE1 /* AppDelegate.swift */; };
 		044E3CAB2A556CC900593BE1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044E3CAA2A556CC900593BE1 /* SceneDelegate.swift */; };
 		044E3CAD2A556CC900593BE1 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044E3CAC2A556CC900593BE1 /* MainTabBarController.swift */; };
@@ -47,6 +48,7 @@
 		041CC3822A5D66C000CBBA04 /* AlertForCellName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertForCellName.swift; sourceTree = "<group>"; };
 		041CC3842A5D69D200CBBA04 /* ScheduleColorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleColorViewController.swift; sourceTree = "<group>"; };
 		041CC3862A5D6AB100CBBA04 /* TeachersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeachersViewController.swift; sourceTree = "<group>"; };
+		041CC38A2A5D862C00CBBA04 /* ColorScheduleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorScheduleTableViewCell.swift; sourceTree = "<group>"; };
 		044E3CA52A556CC900593BE1 /* Schedule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Schedule.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		044E3CA82A556CC900593BE1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		044E3CAA2A556CC900593BE1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 			children = (
 				041CC3602A58171400CBBA04 /* ScheduleTableViewCell.swift */,
 				041CC3792A5B351700CBBA04 /* OptionsScheduleTableViewCell.swift */,
+				041CC38A2A5D862C00CBBA04 /* ColorScheduleTableViewCell.swift */,
 			);
 			path = Schedule;
 			sourceTree = "<group>";
@@ -375,6 +378,7 @@
 			files = (
 				041CC37F2A5D4A6B00CBBA04 /* AlertDate.swift in Sources */,
 				044E3CAD2A556CC900593BE1 /* MainTabBarController.swift in Sources */,
+				041CC38B2A5D862C00CBBA04 /* ColorScheduleTableViewCell.swift in Sources */,
 				041CC3612A58171400CBBA04 /* ScheduleTableViewCell.swift in Sources */,
 				044E3CA92A556CC900593BE1 /* AppDelegate.swift in Sources */,
 				041CC3652A5831CC00CBBA04 /* UIStackView.swift in Sources */,
