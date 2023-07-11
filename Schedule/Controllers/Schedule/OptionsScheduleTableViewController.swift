@@ -20,6 +20,7 @@ class OptionsScheduleTableViewController: UITableViewController {
         tableView.delegate = self
         tableView.backgroundColor = .systemGray6
         tableView.separatorStyle = .none
+        tableView.bounces = false 
         tableView.register(OptionsScheduleTableViewCell.self, forCellReuseIdentifier: idOptionsScheduleCell)
         tableView.register(HeaderOptionsScheduleTableViewCell.self, forHeaderFooterViewReuseIdentifier: idOptionScheduleHeader)
         
@@ -78,9 +79,17 @@ class OptionsScheduleTableViewController: UITableViewController {
         case [1,1]: alertForCellName(label: cell.nameCellLabel, name: "Type lesson", placeholder: "Enter type lesson")
         case [1,2]: alertForCellName(label: cell.nameCellLabel, name: "Building number", placeholder: "Enter number of building")
         case [1,3]: alertForCellName(label: cell.nameCellLabel, name: "Audience number", placeholder: "Enter number of audience")
+        case [2,0]:
+            pushControllers(vc: TeachersViewController())
+        case [3,0]:
+           pushControllers(vc: ScheduleColorViewController())
         default:
-            print("ERROR")
+            print("Tap OptionsTableView")
         }
     }
-    
+    func pushControllers(vc: UIViewController) {
+        let viewController = vc
+        navigationController?.navigationBar.topItem?.title = "Options"
+        navigationController?.pushViewController(viewController, animated: true)
+    }
 }
