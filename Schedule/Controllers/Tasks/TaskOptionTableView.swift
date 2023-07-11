@@ -1,18 +1,18 @@
 //
-//  OptionsScheduleViewController.swift
+//  TaskOptionTableView.swift
 //  Schedule
 //
-//  Created by David Kochkin on 09.07.2023.
+//  Created by David Kochkin on 11.07.2023.
 //
 
 import UIKit
 
-class OptionsScheduleTableViewController: UITableViewController {
+class TaskOptionTableView: UITableViewController {
     
-    let idOptionsScheduleCell = "idOptionsScheduleCell"
-    let idOptionScheduleHeader = "idOptionScheduleHeader"
+    let idOptionsTasksCell = "idOptionsScheduleCell"
+    let idOptionTasksHeader = "idOptionTasksHeader"
     
-    let headerNameArray = ["DATE AND TIME", "LESSON", "TEACHER", "COLOR", "PERIOD"]
+    let headerNameArray = ["DATE AND TIME", "LESSON", "TEACHER", "COLOR"]
     
     
     override func viewDidLoad() {
@@ -22,31 +22,24 @@ class OptionsScheduleTableViewController: UITableViewController {
         tableView.delegate = self
         tableView.backgroundColor = .systemGray6
         tableView.separatorStyle = .none
-        tableView.bounces = false 
-        tableView.register(OptionsScheduleTableViewCell.self, forCellReuseIdentifier: idOptionsScheduleCell)
-        tableView.register(HeaderOptionssTableViewCell.self, forHeaderFooterViewReuseIdentifier: idOptionScheduleHeader)
+        tableView.bounces = false
+        tableView.register(OptionsScheduleTableViewCell.self, forCellReuseIdentifier: idOptionsTasksCell)
+        tableView.register(HeaderOptionssTableViewCell.self, forHeaderFooterViewReuseIdentifier: idOptionTasksHeader)
         
         title = "Option Schedule"
         
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 5
+        return 4
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch section {
-        case 0: return 2
-        case 1: return 4
-        case 2: return 1
-        case 3: return 1
-        default:
-            return 1
-        }
+        return 1
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: idOptionsScheduleCell, for: indexPath) as! OptionsScheduleTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: idOptionsTasksCell, for: indexPath) as! OptionsScheduleTableViewCell
         cell.cellConfigure(indexPath: indexPath)
         return cell
     }
@@ -56,7 +49,7 @@ class OptionsScheduleTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: idOptionScheduleHeader) as! HeaderOptionssTableViewCell
+        let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: idOptionTasksHeader) as! HeaderOptionssTableViewCell
         header.headerConfigure(nameArray: headerNameArray, section: section)
         return header
     }
