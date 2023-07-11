@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ColorScheduleTableViewCell: UITableViewCell {
+class ColorTableViewCell: UITableViewCell {
         
     let backgroundViewCell: UIView = {
        let view = UIView()

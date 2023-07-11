@@ -12,7 +12,7 @@ class TaskOptionTableView: UITableViewController {
     let idOptionsTasksCell = "idOptionsScheduleCell"
     let idOptionTasksHeader = "idOptionTasksHeader"
     
-    let headerNameArray = ["DATE AND TIME", "LESSON", "TEACHER", "COLOR"]
+    let headerNameArray = ["DATE", "LESSON", "TASK", "COLOR"]
     
     
     override func viewDidLoad() {
@@ -23,10 +23,10 @@ class TaskOptionTableView: UITableViewController {
         tableView.backgroundColor = .systemGray6
         tableView.separatorStyle = .none
         tableView.bounces = false
-        tableView.register(OptionsScheduleTableViewCell.self, forCellReuseIdentifier: idOptionsTasksCell)
+        tableView.register(OptionsTaskTableViewCell.self, forCellReuseIdentifier: idOptionsTasksCell)
         tableView.register(HeaderOptionssTableViewCell.self, forHeaderFooterViewReuseIdentifier: idOptionTasksHeader)
         
-        title = "Option Schedule"
+        title = "Options Tasks"
         
     }
     
@@ -39,7 +39,7 @@ class TaskOptionTableView: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: idOptionsTasksCell, for: indexPath) as! OptionsScheduleTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: idOptionsTasksCell, for: indexPath) as! OptionsTaskTableViewCell
         cell.cellConfigure(indexPath: indexPath)
         return cell
     }
@@ -60,30 +60,23 @@ class TaskOptionTableView: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let cell = tableView.cellForRow(at: indexPath) as! OptionsScheduleTableViewCell
+        let cell = tableView.cellForRow(at: indexPath) as! OptionsTaskTableViewCell
         
-        switch indexPath {
-        case [0,0]: alertDate(label: cell.nameCellLabel) { (numberWeekday, date) in
+        switch indexPath.section {
+        case 0: alertDate(label: cell.nameCellLabel) { (numberWeekday, date) in
             print(numberWeekday, date)
         }
-        case [0,1]: alertTime(label: cell.nameCellLabel) { (date) in
-            print(date)
-        }
-        case [1,0]: alertForCellName(label: cell.nameCellLabel, name: "Name lesson", placeholder: "Enter name lesson")
-        case [1,1]: alertForCellName(label: cell.nameCellLabel, name: "Type lesson", placeholder: "Enter type lesson")
-        case [1,2]: alertForCellName(label: cell.nameCellLabel, name: "Building number", placeholder: "Enter number of building")
-        case [1,3]: alertForCellName(label: cell.nameCellLabel, name: "Audience number", placeholder: "Enter number of audience")
-        case [2,0]:
-            pushControllers(vc: TeachersViewController())
-        case [3,0]:
-           pushControllers(vc: ScheduleColorViewController())
+        case 1: alertForCellName(label: cell.nameCellLabel, name: "Name lesson", placeholder: "Enter name lesson")
+        case 2: alertForCellName(label: cell.nameCellLabel, name: "Name Task", placeholder: "Enter name task")
+        case 3: pushControllers(vc: ColorTaskTableViewController())
         default:
             print("Tap OptionsTableView")
         }
     }
-    func pushControllers(vc: UIViewController) {
-        let viewController = vc
-        navigationController?.navigationBar.topItem?.title = "Options"
-        navigationController?.pushViewController(viewController, animated: true)
+        func pushControllers(vc: UIViewController) {
+            let viewController = vc
+            navigationController?.navigationBar.topItem?.title = "Options"
+            navigationController?.pushViewController(viewController, animated: true)
+        }
     }
-}
+
