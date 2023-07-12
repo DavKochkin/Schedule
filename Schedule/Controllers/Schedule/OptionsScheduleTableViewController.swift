@@ -29,7 +29,7 @@ class OptionsScheduleTableViewController: UITableViewController {
         tableView.separatorStyle = .none
         tableView.bounces = false 
         tableView.register(OptionsTableViewCell.self, forCellReuseIdentifier: idOptionsScheduleCell)
-        tableView.register(HeaderOptionssTableViewCell.self, forHeaderFooterViewReuseIdentifier: idOptionScheduleHeader)
+        tableView.register(HeaderOptionsTableViewCell.self, forHeaderFooterViewReuseIdentifier: idOptionScheduleHeader)
         
         title = "Option Schedule"
         
@@ -61,7 +61,7 @@ class OptionsScheduleTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: idOptionScheduleHeader) as! HeaderOptionssTableViewCell
+        let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: idOptionScheduleHeader) as! HeaderOptionsTableViewCell
         header.headerConfigure(nameArray: headerNameArray, section: section)
         return header
     }

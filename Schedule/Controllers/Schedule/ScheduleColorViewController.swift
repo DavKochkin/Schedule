@@ -24,7 +24,7 @@ class ScheduleColorViewController: UITableViewController {
         tableView.separatorStyle = .none
         tableView.bounces = false
         tableView.register(ColorTableViewCell.self, forCellReuseIdentifier: idOptionsColorCell)
-        tableView.register(HeaderOptionssTableViewCell.self, forHeaderFooterViewReuseIdentifier: idOptionsColorCell)
+        tableView.register(HeaderOptionsTableViewCell.self, forHeaderFooterViewReuseIdentifier: idOptionsColorCell)
         
         title = "Color Schedule"
         
@@ -49,7 +49,7 @@ class ScheduleColorViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: idOptionScheduleHeader) as! HeaderOptionssTableViewCell
+        let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: idOptionScheduleHeader) as! HeaderOptionsTableViewCell
         header.headerConfigure(nameArray: headerNameArray, section: section)
         return header
     }

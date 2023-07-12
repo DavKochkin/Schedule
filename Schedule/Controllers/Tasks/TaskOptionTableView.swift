@@ -25,7 +25,7 @@ class TaskOptionTableView: UITableViewController {
         tableView.separatorStyle = .none
         tableView.bounces = false
         tableView.register(OptionsTableViewCell.self, forCellReuseIdentifier: idOptionsTasksCell)
-        tableView.register(HeaderOptionssTableViewCell.self, forHeaderFooterViewReuseIdentifier: idOptionTasksHeader)
+        tableView.register(HeaderOptionsTableViewCell.self, forHeaderFooterViewReuseIdentifier: idOptionTasksHeader)
         
         title = "Options Tasks"
         
@@ -50,7 +50,7 @@ class TaskOptionTableView: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: idOptionTasksHeader) as! HeaderOptionssTableViewCell
+        let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: idOptionTasksHeader) as! HeaderOptionsTableViewCell
         header.headerConfigure(nameArray: headerNameArray, section: section)
         return header
     }

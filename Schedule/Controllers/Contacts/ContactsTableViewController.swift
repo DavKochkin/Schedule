@@ -28,9 +28,9 @@ class ContactsTableViewController: UITableViewController {
     
     @objc func AddButtonTapped() {
         
-        let scheduleOption = OptionsScheduleTableViewController()
-        navigationController?.pushViewController(scheduleOption, animated: true)
-    } 
+        let contactOption = ContactOptionTableViewController()
+        navigationController?.pushViewController(contactOption, animated: true)
+    }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 5

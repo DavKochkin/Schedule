@@ -24,7 +24,7 @@ class ColorTaskTableViewController: UITableViewController {
         tableView.separatorStyle = .none
         tableView.bounces = false
         tableView.register(ColorTableViewCell.self, forCellReuseIdentifier: idTasksColorCell)
-        tableView.register(HeaderOptionssTableViewCell.self, forHeaderFooterViewReuseIdentifier: idTasksScheduleHeader)
+        tableView.register(HeaderOptionsTableViewCell.self, forHeaderFooterViewReuseIdentifier: idTasksScheduleHeader)
         
         title = "Color Tasks"
         
@@ -49,7 +49,7 @@ class ColorTaskTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: idTasksScheduleHeader) as! HeaderOptionssTableViewCell
+        let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: idTasksScheduleHeader) as! HeaderOptionsTableViewCell
         header.headerConfigure(nameArray: headerNameArray, section: section)
         return header
     }
