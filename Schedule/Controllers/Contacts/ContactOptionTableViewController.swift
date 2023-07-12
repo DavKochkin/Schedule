@@ -82,3 +82,24 @@ class ContactOptionTableViewController: UITableViewController {
     }
 }
 
+
+extension ContactsTableViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func chooseImagePicker(source: UIImagePickerController.SourceType) {
+        
+        if UIImagePickerController.isSourceTypeAvailable(source) {
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.allowsEditing = true
+            imagePicker.sourceType = source
+            present(imagePicker, animated: true)
+        }
+    }
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        let cell = tableView.cellForRow(at: [4,0]) as! OptionsTableViewCell
+        
+        cell.backgroundViewCell.image = info[.editedImage] as? UIImage
+        dismiss(animated: true)
+    }
+}
