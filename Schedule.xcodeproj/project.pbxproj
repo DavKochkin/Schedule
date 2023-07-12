@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		04140FB32A5EA4CF002D6188 /* ContactsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04140FB22A5EA4CF002D6188 /* ContactsTableViewController.swift */; };
+		04140FB52A5EA64C002D6188 /* ContactsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04140FB42A5EA64C002D6188 /* ContactsTableViewCell.swift */; };
 		041CC3612A58171400CBBA04 /* ScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041CC3602A58171400CBBA04 /* ScheduleTableViewCell.swift */; };
 		041CC3652A5831CC00CBBA04 /* UIStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041CC3642A5831CC00CBBA04 /* UIStackView.swift */; };
 		041CC3692A583D2800CBBA04 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041CC3682A583D2800CBBA04 /* UILabel.swift */; };
@@ -37,6 +38,7 @@
 
 /* Begin PBXFileReference section */
 		04140FB22A5EA4CF002D6188 /* ContactsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsTableViewController.swift; sourceTree = "<group>"; };
+		04140FB42A5EA64C002D6188 /* ContactsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsTableViewCell.swift; sourceTree = "<group>"; };
 		041CC3602A58171400CBBA04 /* ScheduleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewCell.swift; sourceTree = "<group>"; };
 		041CC3642A5831CC00CBBA04 /* UIStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStackView.swift; sourceTree = "<group>"; };
 		041CC3682A583D2800CBBA04 /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 		041CC3782A5B34E200CBBA04 /* Contacts */ = {
 			isa = PBXGroup;
 			children = (
+				04140FB42A5EA64C002D6188 /* ContactsTableViewCell.swift */,
 			);
 			path = Contacts;
 			sourceTree = "<group>";
@@ -390,6 +393,7 @@
 				044E3CA92A556CC900593BE1 /* AppDelegate.swift in Sources */,
 				041CC3652A5831CC00CBBA04 /* UIStackView.swift in Sources */,
 				041CC3872A5D6AB100CBBA04 /* TeachersViewController.swift in Sources */,
+				04140FB52A5EA64C002D6188 /* ContactsTableViewCell.swift in Sources */,
 				041CC3832A5D66C000CBBA04 /* AlertForCellName.swift in Sources */,
 				041CC3692A583D2800CBBA04 /* UILabel.swift in Sources */,
 				044E3CC22A55761700593BE1 /* TasksViewController.swift in Sources */,
