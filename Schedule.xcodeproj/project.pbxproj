@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04140FB32A5EA4CF002D6188 /* ContactsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04140FB22A5EA4CF002D6188 /* ContactsTableViewController.swift */; };
 		041CC3612A58171400CBBA04 /* ScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041CC3602A58171400CBBA04 /* ScheduleTableViewCell.swift */; };
 		041CC3652A5831CC00CBBA04 /* UIStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041CC3642A5831CC00CBBA04 /* UIStackView.swift */; };
 		041CC3692A583D2800CBBA04 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041CC3682A583D2800CBBA04 /* UILabel.swift */; };
@@ -31,11 +32,11 @@
 		044E3CB52A556CC900593BE1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 044E3CB32A556CC900593BE1 /* LaunchScreen.storyboard */; };
 		044E3CC02A55760A00593BE1 /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044E3CBF2A55760A00593BE1 /* ScheduleViewController.swift */; };
 		044E3CC22A55761700593BE1 /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044E3CC12A55761700593BE1 /* TasksViewController.swift */; };
-		044E3CC42A55762500593BE1 /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044E3CC32A55762500593BE1 /* ContactsViewController.swift */; };
 		AD9B2BEF0387D4A90F8BA969 /* Pods_Schedule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0C12FA8C1C2EC0342078507 /* Pods_Schedule.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		04140FB22A5EA4CF002D6188 /* ContactsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsTableViewController.swift; sourceTree = "<group>"; };
 		041CC3602A58171400CBBA04 /* ScheduleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewCell.swift; sourceTree = "<group>"; };
 		041CC3642A5831CC00CBBA04 /* UIStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStackView.swift; sourceTree = "<group>"; };
 		041CC3682A583D2800CBBA04 /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
@@ -62,7 +63,6 @@
 		044E3CB62A556CC900593BE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		044E3CBF2A55760A00593BE1 /* ScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
 		044E3CC12A55761700593BE1 /* TasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
-		044E3CC32A55762500593BE1 /* ContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
 		79B61A6F931D673D56BEFE65 /* Pods-Schedule.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Schedule.release.xcconfig"; path = "Target Support Files/Pods-Schedule/Pods-Schedule.release.xcconfig"; sourceTree = "<group>"; };
 		A09E8CD15CA731569935A318 /* Pods-Schedule.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Schedule.debug.xcconfig"; path = "Target Support Files/Pods-Schedule/Pods-Schedule.debug.xcconfig"; sourceTree = "<group>"; };
 		D0C12FA8C1C2EC0342078507 /* Pods_Schedule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Schedule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -151,8 +151,8 @@
 		041CC3752A5B302400CBBA04 /* Contacts */ = {
 			isa = PBXGroup;
 			children = (
-				044E3CC32A55762500593BE1 /* ContactsViewController.swift */,
 				041CC3862A5D6AB100CBBA04 /* TeachersViewController.swift */,
+				04140FB22A5EA4CF002D6188 /* ContactsTableViewController.swift */,
 			);
 			path = Contacts;
 			sourceTree = "<group>";
@@ -396,10 +396,10 @@
 				044E3CAB2A556CC900593BE1 /* SceneDelegate.swift in Sources */,
 				041CC3812A5D5F4100CBBA04 /* AlertTime.swift in Sources */,
 				044E3CC02A55760A00593BE1 /* ScheduleViewController.swift in Sources */,
+				04140FB32A5EA4CF002D6188 /* ContactsTableViewController.swift in Sources */,
 				041CC3912A5D8FC000CBBA04 /* ColorTaskTableViewController.swift in Sources */,
 				041CC36B2A58404E00CBBA04 /* UIFont.swift in Sources */,
 				041CC37C2A5B3A0C00CBBA04 /* HeaderOptionssTableViewCell.swift in Sources */,
-				044E3CC42A55762500593BE1 /* ContactsViewController.swift in Sources */,
 				041CC36D2A588B4400CBBA04 /* TasksTableViewCell.swift in Sources */,
 				041CC37A2A5B351700CBBA04 /* OptionsTableViewCell.swift in Sources */,
 				041CC3702A58906800CBBA04 /* PressButtonProtocols.swift in Sources */,
