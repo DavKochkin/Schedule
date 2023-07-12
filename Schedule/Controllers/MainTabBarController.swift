@@ -33,7 +33,7 @@ class MainTabBarController: UITabBarController {
         
         let navController = UINavigationController(rootViewController: vc)
         navController.tabBarItem = item
-        
+        navController.navigationBar.scrollEdgeAppearance = navController.navigationBar.standardAppearance
         
         return navController
     }

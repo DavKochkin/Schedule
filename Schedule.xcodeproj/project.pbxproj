@@ -159,6 +159,7 @@
 			children = (
 				041CC3862A5D6AB100CBBA04 /* TeachersViewController.swift */,
 				04140FB22A5EA4CF002D6188 /* ContactsTableViewController.swift */,
+				04140FB62A5EB12A002D6188 /* ContactOptionTableViewController.swift */,
 			);
 			path = Contacts;
 			sourceTree = "<group>";
@@ -183,7 +184,6 @@
 			isa = PBXGroup;
 			children = (
 				04140FB42A5EA64C002D6188 /* ContactsTableViewCell.swift */,
-				04140FB62A5EB12A002D6188 /* ContactOptionTableViewController.swift */,
 			);
 			path = Contacts;
 			sourceTree = "<group>";

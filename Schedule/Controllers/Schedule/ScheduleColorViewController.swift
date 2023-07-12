@@ -10,7 +10,7 @@ import UIKit
 class ScheduleColorViewController: UITableViewController {
     
     let idOptionsColorCell = "idOptionsColorCell"
-    let idOptionScheduleHeader = "idOptionsColorCell"
+    let idOptionScheduleHeader = "idOptionScheduleHeader"
     
     let headerNameArray = ["RED", "ORANGE", "YELLOW", "GREEN", "BLUE", "MINT", "PURPLE"]
     
@@ -24,7 +24,7 @@ class ScheduleColorViewController: UITableViewController {
         tableView.separatorStyle = .none
         tableView.bounces = false
         tableView.register(ColorTableViewCell.self, forCellReuseIdentifier: idOptionsColorCell)
-        tableView.register(HeaderOptionsTableViewCell.self, forHeaderFooterViewReuseIdentifier: idOptionsColorCell)
+        tableView.register(HeaderOptionsTableViewCell.self, forHeaderFooterViewReuseIdentifier: idOptionScheduleHeader)
         
         title = "Color Schedule"
         
