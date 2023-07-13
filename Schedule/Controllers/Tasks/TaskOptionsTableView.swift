@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TaskOptionTableView: UITableViewController {
+class TaskOptionsTableView: UITableViewController {
     
     let idOptionsTasksCell = "idOptionsScheduleCell"
     let idOptionTasksHeader = "idOptionTasksHeader"
@@ -69,7 +69,7 @@ class TaskOptionTableView: UITableViewController {
         }
         case 1: alertForCellName(label: cell.nameCellLabel, name: "Name lesson", placeholder: "Enter name lesson")
         case 2: alertForCellName(label: cell.nameCellLabel, name: "Name Task", placeholder: "Enter name task")
-        case 3: pushControllers(vc: ColorTaskTableViewController())
+        case 3: pushControllers(vc: TaskColorsTableViewController())
         default:
             print("Tap OptionsTableView")
         }

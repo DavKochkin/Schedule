@@ -1,5 +1,5 @@
 //
-//  ColorTaskTableViewController.swift
+//  ScheduleColorViewController.swift
 //  Schedule
 //
 //  Created by David Kochkin on 11.07.2023.
@@ -7,10 +7,10 @@
 
 import UIKit
 
-class ColorTaskTableViewController: UITableViewController {
+class ScheduleColorsViewController: UITableViewController {
     
-    let idTasksColorCell = "idTasksColorCell"
-    let idTasksScheduleHeader = "idTasksScheduleHeader"
+    let idOptionsColorCell = "idOptionsColorCell"
+    let idOptionScheduleHeader = "idOptionScheduleHeader"
     
     let headerNameArray = ["RED", "ORANGE", "YELLOW", "GREEN", "BLUE", "MINT", "PURPLE"]
     
@@ -23,10 +23,10 @@ class ColorTaskTableViewController: UITableViewController {
         tableView.backgroundColor = .systemGray6
         tableView.separatorStyle = .none
         tableView.bounces = false
-        tableView.register(ColorTableViewCell.self, forCellReuseIdentifier: idTasksColorCell)
-        tableView.register(HeaderOptionsTableViewCell.self, forHeaderFooterViewReuseIdentifier: idTasksScheduleHeader)
+        tableView.register(ColorsTableViewCell.self, forCellReuseIdentifier: idOptionsColorCell)
+        tableView.register(HeaderOptionsTableViewCell.self, forHeaderFooterViewReuseIdentifier: idOptionScheduleHeader)
         
-        title = "Color Tasks"
+        title = "Color Schedule"
         
     }
     
@@ -39,7 +39,7 @@ class ColorTaskTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: idTasksColorCell, for: indexPath) as! ColorTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: idOptionsColorCell, for: indexPath) as! ColorsTableViewCell
         cell.cellConfigure(indexPath: indexPath)
         return cell
     }
@@ -49,7 +49,7 @@ class ColorTaskTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: idTasksScheduleHeader) as! HeaderOptionsTableViewCell
+        let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: idOptionScheduleHeader) as! HeaderOptionsTableViewCell
         header.headerConfigure(nameArray: headerNameArray, section: section)
         return header
     }

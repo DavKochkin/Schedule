@@ -7,7 +7,7 @@
 
 import UIKit
 
-class OptionsScheduleTableViewController: UITableViewController {
+class ScheduleOptionsTableViewController: UITableViewController {
     
     let idOptionsScheduleCell = "idOptionsScheduleCell"
     let idOptionScheduleHeader = "idOptionScheduleHeader"
@@ -88,7 +88,7 @@ class OptionsScheduleTableViewController: UITableViewController {
         case [2,0]:
             pushControllers(vc: TeachersViewController())
         case [3,0]:
-           pushControllers(vc: ScheduleColorViewController())
+           pushControllers(vc: ScheduleColorsViewController())
         default:
             print("Tap OptionsTableView")
         }
