@@ -33,6 +33,26 @@ class ScheduleOptionsTableViewController: UITableViewController {
         
         title = "Option Schedule"
         
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveButtonTapped))
+        
+    }
+    
+    @objc private func saveButtonTapped() {
+        print("SAVE")
+        let scheduleModel = ScheduleModel()
+        
+        scheduleModel.scheduleDate = Date()
+        scheduleModel.scheduleTime = Date()
+        scheduleModel.scheduleName = "ScheduleName"
+        scheduleModel.scheduleType = "ScheduleType"
+        scheduleModel.scheduleBuilding = "ScheduleBuilding"
+        scheduleModel.scheduleAudience = "ScheduleAudience"
+        scheduleModel.scheduleTeacher = "ScheduleTeacher"
+        scheduleModel.scheduleColor = "ScheduleColor"
+        scheduleModel.scheduleRepeat = true
+        scheduleModel.scheduleWeekday = 100
+        
+        RealmManager.shared.saveScheduleModel(model: scheduleModel)
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {

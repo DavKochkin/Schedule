@@ -55,10 +55,10 @@ class TasksViewController: UIViewController {
         
         showHideButton.addTarget(self, action: #selector(showHideButtonTapped), for: .touchUpInside)
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(AddButtonTapped))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonTapped))
     }
     
-    @objc func AddButtonTapped() {
+    @objc func addButtonTapped() {
         
         let tasksOption = TaskOptionsTableView()
         navigationController?.pushViewController(tasksOption, animated: true)
