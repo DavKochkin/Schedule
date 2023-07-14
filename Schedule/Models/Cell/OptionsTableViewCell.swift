@@ -29,7 +29,6 @@ class OptionsTableViewCell: UITableViewCell {
         let repeatSwitch = UISwitch()
         repeatSwitch.isOn = true
         repeatSwitch.isHidden = true
-        repeatSwitch.onTintColor = .systemMint
         repeatSwitch.translatesAutoresizingMaskIntoConstraints = false
        return repeatSwitch
     }()
@@ -50,23 +49,22 @@ class OptionsTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func cellScheduleConfigure(nameArray: [[String]], indexPath: IndexPath) {
+    func cellScheduleConfigure(nameArray: [[String]], indexPath: IndexPath, hexColor: String) {
+        
         nameCellLabel.text = nameArray[indexPath.section][indexPath.row]
         
-        if indexPath == [3,0] {
-            backgroundViewCell.backgroundColor = .systemMint
-        }
-        
-        if indexPath == [4,0] {
-            repeatSwitch.isHidden = false
-        }
+        let color = UIColor().colorFromHex(hexColor)
+        backgroundViewCell.backgroundColor = (indexPath.section == 3 ? color : .white )
+        repeatSwitch.isHidden = (indexPath.section == 4 ? false : true)
+        repeatSwitch.onTintColor = color
     }
     
     func cellTasksConfigure(nameArray: [String], indexPath: IndexPath) {
+        
         nameCellLabel.text = nameArray[indexPath.section]
         
         if indexPath == [3,0] {
-            backgroundViewCell.backgroundColor = .systemMint
+            backgroundViewCell.backgroundColor = (indexPath.section == 3 ? .systemMint : .white)
         }
     }
     
