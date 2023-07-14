@@ -20,7 +20,7 @@ class ScheduleOptionsTableViewController: UITableViewController {
                          [""],
                          ["Repeat every 7 days"]]
     
-    private let scheduleModel = ScheduleModel()
+    private var scheduleModel = ScheduleModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,6 +42,7 @@ class ScheduleOptionsTableViewController: UITableViewController {
     @objc private func saveButtonTapped() {
         
         RealmManager.shared.saveScheduleModel(model: scheduleModel)
+        scheduleModel = ScheduleModel()
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
