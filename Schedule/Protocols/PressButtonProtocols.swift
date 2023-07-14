@@ -11,3 +11,7 @@ import Foundation
 protocol PressReadyTaskButtonProtocol: AnyObject {
     func readyButtonTappe(indexPath: IndexPath) 
 }
+
+protocol SwitchRepeatProtocol: AnyObject {
+    func switchRepeat(value: Bool)
+}
