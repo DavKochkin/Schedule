@@ -41,7 +41,7 @@ class ScheduleTableViewCell: UITableViewCell {
         lessonType.text = model.scheduleType
         lessonBuilding.text = model.scheduleBuilding
         lessonClass.text = model.scheduleAudience
-        backgroundColor = UIColor().colorFromHex("\(model.scheduleColor))
+        backgroundColor = UIColor().colorFromHex("\(model.scheduleColor)")
     }
     
     func setConstraints() {

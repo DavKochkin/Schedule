@@ -57,6 +57,7 @@ class ScheduleViewController: UIViewController {
         
         setConstraints()
         swipeAction()
+        scheduleOnDay(date: Date())
         
         showHideButton.addTarget(self, action: #selector(showHideButtonTapped), for: .touchUpInside)
         
@@ -124,6 +125,7 @@ class ScheduleViewController: UIViewController {
         let compound = NSCompoundPredicate(type: .or, subpredicates: [predicateRepeat, predicateUnrepeat])
         
         scheduleArray = localRealm.objects(ScheduleModel.self).filter(compound)
+        tableView.reloadData()
     }
 }
 
