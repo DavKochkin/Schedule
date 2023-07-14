@@ -8,6 +8,6 @@
 import Foundation
 
 
-protocol PressReadyTaskButtonProtocol: class {
+protocol PressReadyTaskButtonProtocol: AnyObject {
     func readyButtonTappe(indexPath: IndexPath) 
 }

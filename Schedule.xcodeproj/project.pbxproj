@@ -36,6 +36,7 @@
 		044E3CC22A55761700593BE1 /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044E3CC12A55761700593BE1 /* TasksViewController.swift */; };
 		0492744D2A5FF82E00FC4A26 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 0492744C2A5FF82E00FC4A26 /* Realm */; };
 		0492744F2A5FF82E00FC4A26 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 0492744E2A5FF82E00FC4A26 /* RealmSwift */; };
+		04D3ECE52A613ABB00CE050E /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D3ECE42A613ABB00CE050E /* UIColor.swift */; };
 		04EECF0C2A5EC96B00A4D650 /* AlertFriendOrTeacher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EECF0B2A5EC96B00A4D650 /* AlertFriendOrTeacher.swift */; };
 		04EECF0E2A5ED19200A4D650 /* AlertPhotoCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EECF0D2A5ED19200A4D650 /* AlertPhotoCamera.swift */; };
 		04F4B4182A5FFC6F0090850A /* ScheduleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F4B4172A5FFC6F0090850A /* ScheduleModel.swift */; };
@@ -73,6 +74,7 @@
 		044E3CB62A556CC900593BE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		044E3CBF2A55760A00593BE1 /* ScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
 		044E3CC12A55761700593BE1 /* TasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
+		04D3ECE42A613ABB00CE050E /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		04EECF0B2A5EC96B00A4D650 /* AlertFriendOrTeacher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertFriendOrTeacher.swift; sourceTree = "<group>"; };
 		04EECF0D2A5ED19200A4D650 /* AlertPhotoCamera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertPhotoCamera.swift; sourceTree = "<group>"; };
 		04F4B4172A5FFC6F0090850A /* ScheduleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleModel.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 				041CC3642A5831CC00CBBA04 /* UIStackView.swift */,
 				041CC3682A583D2800CBBA04 /* UILabel.swift */,
 				041CC36A2A58404E00CBBA04 /* UIFont.swift */,
+				04D3ECE42A613ABB00CE050E /* UIColor.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -446,6 +449,7 @@
 				041CC3812A5D5F4100CBBA04 /* AlertTime.swift in Sources */,
 				044E3CC02A55760A00593BE1 /* ScheduleViewController.swift in Sources */,
 				04140FB32A5EA4CF002D6188 /* ContactsTableViewController.swift in Sources */,
+				04D3ECE52A613ABB00CE050E /* UIColor.swift in Sources */,
 				041CC3912A5D8FC000CBBA04 /* TaskColorsTableViewController.swift in Sources */,
 				041CC36B2A58404E00CBBA04 /* UIFont.swift in Sources */,
 				04140FB72A5EB12A002D6188 /* ContactsOptionsTableViewController.swift in Sources */,

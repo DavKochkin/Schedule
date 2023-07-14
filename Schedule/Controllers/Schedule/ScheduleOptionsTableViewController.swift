@@ -84,16 +84,31 @@ class ScheduleOptionsTableViewController: UITableViewController {
         let cell = tableView.cellForRow(at: indexPath) as! OptionsTableViewCell
         
         switch indexPath {
-        case [0,0]: alertDate(label: cell.nameCellLabel) { [self] (numberWeekday, date) in
-            scheduleModel.scheduleDate = date
+        case [0,0]:
+            alertDate(label: cell.nameCellLabel) { (numberWeekday, date) in
+                self.scheduleModel.scheduleDate = date
+                self.scheduleModel.scheduleWeekday = numberWeekday
         }
-        case [0,1]: alertTime(label: cell.nameCellLabel) { [self] (time) in
-            scheduleModel.scheduleTime = time 
+        case [0,1]:
+            alertTime(label: cell.nameCellLabel) { (time) in
+                self.scheduleModel.scheduleTime = time
         }
-        case [1,0]: alertForCellName(label: cell.nameCellLabel, name: "Name lesson", placeholder: "Enter name lesson")
-        case [1,1]: alertForCellName(label: cell.nameCellLabel, name: "Type lesson", placeholder: "Enter type lesson")
-        case [1,2]: alertForCellName(label: cell.nameCellLabel, name: "Building number", placeholder: "Enter number of building")
-        case [1,3]: alertForCellName(label: cell.nameCellLabel, name: "Audience number", placeholder: "Enter number of audience")
+        case [1,0]:
+            alertForCellName(label: cell.nameCellLabel, name: "Name lesson", placeholder: "Enter name lesson") { text in
+                self.scheduleModel.scheduleName = text
+        }
+        case [1,1]:
+            alertForCellName(label: cell.nameCellLabel, name: "Type lesson", placeholder: "Enter type lesson") { text in
+                self.scheduleModel.scheduleType = text
+        }
+        case [1,2]:
+            alertForCellName(label: cell.nameCellLabel, name: "Building number", placeholder: "Enter number of building") { text in
+                self.scheduleModel.scheduleBuilding = text
+        }
+        case [1,3]:
+            alertForCellName(label: cell.nameCellLabel, name: "Audience number", placeholder: "Enter number of audience") { text in
+                self.scheduleModel.scheduleAudience = text
+        }
         case [2,0]:
             pushControllers(vc: TeachersViewController())
         case [3,0]:
