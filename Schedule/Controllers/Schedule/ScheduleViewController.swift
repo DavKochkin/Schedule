@@ -124,7 +124,7 @@ class ScheduleViewController: UIViewController {
         let predicateUnrepeat = NSPredicate(format: "scheduleRepeat = false AND scheduleDate  BETWEEN %@", [dateStart, dateEnd])
         let compound = NSCompoundPredicate(type: .or, subpredicates: [predicateRepeat, predicateUnrepeat])
         
-        scheduleArray = localRealm.objects(ScheduleModel.self).filter(compound)
+        scheduleArray = localRealm.objects(ScheduleModel.self).filter(compound).sorted(byKeyPath: "scheduleTime")
         tableView.reloadData()
     }
 }
