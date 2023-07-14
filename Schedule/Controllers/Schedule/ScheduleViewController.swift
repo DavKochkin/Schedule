@@ -37,7 +37,7 @@ class ScheduleViewController: UIViewController {
     }()
     
     let localRealm = try! Realm()
-    var scheduleModel: Results <ScheduleModel>!
+    var scheduleArray: Results <ScheduleModel>!
     
     private let idScheduleCell = "idScheduleCell"
     
@@ -46,9 +46,6 @@ class ScheduleViewController: UIViewController {
         
         view.backgroundColor = .white
         title = "Schedule"
-        
-        scheduleModel = localRealm.objects(ScheduleModel.self)
-        print(scheduleModel)
         
         calendar.delegate = self
         calendar.dataSource = self
@@ -140,7 +137,15 @@ extension ScheduleViewController: FSCalendarDataSource, FSCalendarDelegate {
     }
     
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
+        let calendar = Calendar.current    // defining the day of the week
+        let components = calendar.dateComponents([.weekday], from: date)
+        guard let weekday = components.weekday else { return }
+        print(weekday)
         
+        let predicateRepeat = NSPredicate(format: "scheduleWeekday = \(weekday) AND scheduleRepeat = true")
+        
+        scheduleArray = localRealm.objects(ScheduleModel.self).filter(predicateRepeat)
+        print(scheduleArray)
     }
 }
 
