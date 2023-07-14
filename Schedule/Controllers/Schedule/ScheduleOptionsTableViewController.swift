@@ -20,6 +20,8 @@ class ScheduleOptionsTableViewController: UITableViewController {
                          [""],
                          ["Repeat every 7 days"]]
     
+    private let scheduleModel = ScheduleModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -38,19 +40,6 @@ class ScheduleOptionsTableViewController: UITableViewController {
     }
     
     @objc private func saveButtonTapped() {
-        print("SAVE")
-        let scheduleModel = ScheduleModel()
-        
-        scheduleModel.scheduleDate = Date()
-        scheduleModel.scheduleTime = Date()
-        scheduleModel.scheduleName = "ScheduleName"
-        scheduleModel.scheduleType = "ScheduleType"
-        scheduleModel.scheduleBuilding = "ScheduleBuilding"
-        scheduleModel.scheduleAudience = "ScheduleAudience"
-        scheduleModel.scheduleTeacher = "ScheduleTeacher"
-        scheduleModel.scheduleColor = "ScheduleColor"
-        scheduleModel.scheduleRepeat = true
-        scheduleModel.scheduleWeekday = 100
         
         RealmManager.shared.saveScheduleModel(model: scheduleModel)
     }
@@ -95,11 +84,11 @@ class ScheduleOptionsTableViewController: UITableViewController {
         let cell = tableView.cellForRow(at: indexPath) as! OptionsTableViewCell
         
         switch indexPath {
-        case [0,0]: alertDate(label: cell.nameCellLabel) { (numberWeekday, date) in
-            print(numberWeekday, date)
+        case [0,0]: alertDate(label: cell.nameCellLabel) { [self] (numberWeekday, date) in
+            scheduleModel.scheduleDate = date
         }
-        case [0,1]: alertTime(label: cell.nameCellLabel) { (date) in
-            print(date)
+        case [0,1]: alertTime(label: cell.nameCellLabel) { [self] (time) in
+            scheduleModel.scheduleTime = time 
         }
         case [1,0]: alertForCellName(label: cell.nameCellLabel, name: "Name lesson", placeholder: "Enter name lesson")
         case [1,1]: alertForCellName(label: cell.nameCellLabel, name: "Type lesson", placeholder: "Enter type lesson")
