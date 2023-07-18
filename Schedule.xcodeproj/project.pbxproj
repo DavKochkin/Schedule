@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		04140FB32A5EA4CF002D6188 /* ContactsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04140FB22A5EA4CF002D6188 /* ContactsTableViewController.swift */; };
+		04140FB32A5EA4CF002D6188 /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04140FB22A5EA4CF002D6188 /* ContactsViewController.swift */; };
 		04140FB52A5EA64C002D6188 /* ContactsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04140FB42A5EA64C002D6188 /* ContactsTableViewCell.swift */; };
 		04140FB72A5EB12A002D6188 /* ContactsOptionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04140FB62A5EB12A002D6188 /* ContactsOptionsTableViewController.swift */; };
 		0417358B2A658C7400AD1153 /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0417358A2A658C7400AD1153 /* TaskModel.swift */; };
@@ -48,7 +48,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		04140FB22A5EA4CF002D6188 /* ContactsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsTableViewController.swift; sourceTree = "<group>"; };
+		04140FB22A5EA4CF002D6188 /* ContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
 		04140FB42A5EA64C002D6188 /* ContactsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsTableViewCell.swift; sourceTree = "<group>"; };
 		04140FB62A5EB12A002D6188 /* ContactsOptionsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsOptionsTableViewController.swift; sourceTree = "<group>"; };
 		0417358A2A658C7400AD1153 /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
@@ -177,7 +177,7 @@
 		041CC3752A5B302400CBBA04 /* Contacts */ = {
 			isa = PBXGroup;
 			children = (
-				04140FB22A5EA4CF002D6188 /* ContactsTableViewController.swift */,
+				04140FB22A5EA4CF002D6188 /* ContactsViewController.swift */,
 				04140FB62A5EB12A002D6188 /* ContactsOptionsTableViewController.swift */,
 				041CC3862A5D6AB100CBBA04 /* TeachersViewController.swift */,
 			);
@@ -459,7 +459,7 @@
 				044E3CAB2A556CC900593BE1 /* SceneDelegate.swift in Sources */,
 				041CC3812A5D5F4100CBBA04 /* AlertTime.swift in Sources */,
 				044E3CC02A55760A00593BE1 /* ScheduleViewController.swift in Sources */,
-				04140FB32A5EA4CF002D6188 /* ContactsTableViewController.swift in Sources */,
+				04140FB32A5EA4CF002D6188 /* ContactsViewController.swift in Sources */,
 				04D3ECE52A613ABB00CE050E /* UIColor.swift in Sources */,
 				041CC3912A5D8FC000CBBA04 /* TaskColorsTableViewController.swift in Sources */,
 				041CC36B2A58404E00CBBA04 /* UIFont.swift in Sources */,
