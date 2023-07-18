@@ -17,11 +17,16 @@ class ContactsViewController: UIViewController {
     private let localRealm = try! Realm()
     private var contactsArray: Results<ContactModel>!
     
-    let tableView: UITableView = {
+    private let segmentedControl: UISegmentedControl = {
+        let segmentedControl = UISegmentedControl(items: ["Friends", "Teachers"])
+        segmentedControl.selectedSegmentIndex = 0
+        return segmentedControl
+    }()
+    
+    private let tableView: UITableView = {
         let tableView = UITableView()
         tableView.backgroundColor = .systemGray6
         tableView.separatorStyle = .singleLine
-        tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
     
@@ -34,13 +39,14 @@ class ContactsViewController: UIViewController {
         super.viewDidLoad()
         
         title = "Contacts"
+        view.backgroundColor = .white
         
         setContraints()
         
         searchController.searchBar.placeholder = "Search"
         navigationItem.searchController = searchController
         
-        contactsArray = localRealm.objects(ContactModel.self)
+        contactsArray = localRealm.objects(ContactModel.self).filter("contactsType = 'Friend'")
         
         tableView.dataSource = self
         tableView.delegate = self
@@ -49,6 +55,18 @@ class ContactsViewController: UIViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add,
                                                             target: self,
                                                             action: #selector(addButtonTapped))
+        
+        segmentedControl.addTarget(self, action: #selector(segmentChanged), for: .valueChanged)
+    }
+    
+    @objc private func segmentChanged() {
+        if segmentedControl.selectedSegmentIndex == 0 {
+            contactsArray = localRealm.objects(ContactModel.self).filter("contactsType = 'Friend'")
+            tableView.reloadData()
+        } else {
+            contactsArray = localRealm.objects(ContactModel.self).filter("contactsType = 'Teacher'")
+            tableView.reloadData()
+        }
     }
     
     @objc func addButtonTapped() {
@@ -100,10 +118,11 @@ extension ContactsViewController {
     
     private func setContraints() {
         
-        let stackView = UIStackView(arrangedSubviews: [tableView], axis: .vertical, spacing: 0, distribution: .fillProportionally)
+        let stackView = UIStackView(arrangedSubviews: [segmentedControl, tableView], axis: .vertical, spacing: 0, distribution: .equalSpacing)
+        stackView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(stackView)
         NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0),
+            stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0),
             stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
             stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
             stackView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0)
