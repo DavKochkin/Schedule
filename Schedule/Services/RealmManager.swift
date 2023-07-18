@@ -49,17 +49,17 @@ class RealmManager {
     
     
     //ContactModel
-//
-//    func saveContactModel(model: ContactModel) {
-//        try! localRealm.write {
-//            localRealm.add(model)
-//        }
-//    }
-//
-//    func deleteContactModel(model: ContactModel) {
-//        try! localRealm.write {
-//            localRealm.delete(model)
-//        }
-//    }
+
+    func saveContactModel(model: ContactModel) {
+        try! localRealm.write {
+            localRealm.add(model)
+        }
+    }
+
+    func deleteContactModel(model: ContactModel) {
+        try! localRealm.write {
+            localRealm.delete(model)
+        }
+    }
 
 }

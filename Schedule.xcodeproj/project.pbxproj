@@ -11,6 +11,7 @@
 		04140FB52A5EA64C002D6188 /* ContactsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04140FB42A5EA64C002D6188 /* ContactsTableViewCell.swift */; };
 		04140FB72A5EB12A002D6188 /* ContactsOptionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04140FB62A5EB12A002D6188 /* ContactsOptionsTableViewController.swift */; };
 		0417358B2A658C7400AD1153 /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0417358A2A658C7400AD1153 /* TaskModel.swift */; };
+		0417358D2A667E3600AD1153 /* ContactModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0417358C2A667E3600AD1153 /* ContactModel.swift */; };
 		041CC3612A58171400CBBA04 /* ScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041CC3602A58171400CBBA04 /* ScheduleTableViewCell.swift */; };
 		041CC3652A5831CC00CBBA04 /* UIStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041CC3642A5831CC00CBBA04 /* UIStackView.swift */; };
 		041CC3692A583D2800CBBA04 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041CC3682A583D2800CBBA04 /* UILabel.swift */; };
@@ -51,6 +52,7 @@
 		04140FB42A5EA64C002D6188 /* ContactsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsTableViewCell.swift; sourceTree = "<group>"; };
 		04140FB62A5EB12A002D6188 /* ContactsOptionsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsOptionsTableViewController.swift; sourceTree = "<group>"; };
 		0417358A2A658C7400AD1153 /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
+		0417358C2A667E3600AD1153 /* ContactModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactModel.swift; sourceTree = "<group>"; };
 		041CC3602A58171400CBBA04 /* ScheduleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewCell.swift; sourceTree = "<group>"; };
 		041CC3642A5831CC00CBBA04 /* UIStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStackView.swift; sourceTree = "<group>"; };
 		041CC3682A583D2800CBBA04 /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
@@ -175,9 +177,9 @@
 		041CC3752A5B302400CBBA04 /* Contacts */ = {
 			isa = PBXGroup;
 			children = (
-				041CC3862A5D6AB100CBBA04 /* TeachersViewController.swift */,
 				04140FB22A5EA4CF002D6188 /* ContactsTableViewController.swift */,
 				04140FB62A5EB12A002D6188 /* ContactsOptionsTableViewController.swift */,
+				041CC3862A5D6AB100CBBA04 /* TeachersViewController.swift */,
 			);
 			path = Contacts;
 			sourceTree = "<group>";
@@ -286,6 +288,7 @@
 			children = (
 				04F4B4172A5FFC6F0090850A /* ScheduleModel.swift */,
 				0417358A2A658C7400AD1153 /* TaskModel.swift */,
+				0417358C2A667E3600AD1153 /* ContactModel.swift */,
 			);
 			path = Realm;
 			sourceTree = "<group>";
@@ -468,6 +471,7 @@
 				041CC3702A58906800CBBA04 /* PressButtonProtocols.swift in Sources */,
 				041CC3852A5D69D200CBBA04 /* ScheduleColorsViewController.swift in Sources */,
 				041CC3722A5B2FEC00CBBA04 /* ScheduleOptionsTableViewController.swift in Sources */,
+				0417358D2A667E3600AD1153 /* ContactModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

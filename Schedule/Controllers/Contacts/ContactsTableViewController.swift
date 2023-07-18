@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class ContactsTableViewController: UITableViewController {
     
@@ -13,11 +14,23 @@ class ContactsTableViewController: UITableViewController {
     
     let idContactsCell = "idContactsCell"
     
+    private let localRealm = try! Realm()
+    private var contactsArray: Results<ContactModel>!
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        title = "Contacts"
+        
         searchController.searchBar.placeholder = "Search"
         navigationItem.searchController = searchController
+        
+        contactsArray = localRealm.objects(ContactModel.self)
         
         tableView.dataSource = self
         tableView.delegate = self
@@ -25,9 +38,9 @@ class ContactsTableViewController: UITableViewController {
         tableView.separatorStyle = .singleLine
         tableView.register(ContactsTableViewCell.self, forCellReuseIdentifier: idContactsCell)
         
-        title = "Contacts"
-        
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonTapped))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add,
+                                                            target: self,
+                                                            action: #selector(addButtonTapped))
     }
     
     @objc func addButtonTapped() {
@@ -36,12 +49,17 @@ class ContactsTableViewController: UITableViewController {
         navigationController?.pushViewController(contactOption, animated: true)
     }
     
+    
+    //MARK: UITableViewDelegate, UITableViewDataSource
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        contactsArray.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: idContactsCell, for: indexPath) as! ContactsTableViewCell
+        let model = contactsArray[indexPath.row]
+        cell.configure(model: model)
         return cell
     }
     
@@ -51,6 +69,17 @@ class ContactsTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("TAP")
+    }
+    
+    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let editingRow = contactsArray[indexPath.row]
+        
+        let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { _, _, completionHandler in
+            RealmManager.shared.deleteContactModel(model: editingRow)
+            tableView.reloadData()
+        }
+        return UISwipeActionsConfiguration(actions: [deleteAction])
     }
 }
 
