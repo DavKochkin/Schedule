@@ -11,7 +11,7 @@ class ContactsTableViewCell: UITableViewCell {
     
     let contactImageView: UIImageView = {
        let imageView = UIImageView()
-        imageView.image = UIImage(named: "contacts")
+        imageView.image = UIImage(systemName: "person.fill")
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -33,9 +33,9 @@ class ContactsTableViewCell: UITableViewCell {
         return imageView
     }()
     
-    let nameLabel = UILabel(text: "Cruella De Vil", font: .avenirNext20())
-    let phoneLabel = UILabel(text: "+371 666 666 66", font: .avenirNext14())
-    let mailLabel = UILabel(text: "CruellaDeVil@gmail.com", font: .avenirNext14())
+    let nameLabel = UILabel(text: "Unknown", font: .avenirNext20())
+    let phoneLabel = UILabel(text: "Unknown", font: .avenirNext14())
+    let mailLabel = UILabel(text: "Unknown", font: .avenirNext14())
     
     override func layoutIfNeeded() {
         super.layoutSubviews()
