@@ -10,13 +10,6 @@ import RealmSwift
 
 class ContactsViewController: UIViewController {
     
-    let searchController = UISearchController()
-    
-    let idContactsCell = "idContactsCell"
-    
-    private let localRealm = try! Realm()
-    private var contactsArray: Results<ContactModel>!
-    
     private let segmentedControl: UISegmentedControl = {
         let segmentedControl = UISegmentedControl(items: ["Friends", "Teachers"])
         segmentedControl.selectedSegmentIndex = 0
@@ -29,6 +22,23 @@ class ContactsViewController: UIViewController {
         tableView.separatorStyle = .singleLine
         return tableView
     }()
+    
+    let searchController = UISearchController()
+    
+    let idContactsCell = "idContactsCell"
+    
+    private let localRealm = try! Realm()
+    private var contactsArray: Results<ContactModel>!
+    private var filtredArray: Results<ContactModel>!
+    
+    var searcBarIsEmpty: Bool {
+        guard let text = searchController.searchBar.text else { return true }
+        return text.isEmpty
+    }
+    
+    var isFiltering: Bool {
+        return searchController.isActive && !searcBarIsEmpty
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -45,6 +55,8 @@ class ContactsViewController: UIViewController {
         
         searchController.searchBar.placeholder = "Search"
         navigationItem.searchController = searchController
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
         
         contactsArray = localRealm.objects(ContactModel.self).filter("contactsType = 'Friend'")
         
@@ -83,12 +95,12 @@ class ContactsViewController: UIViewController {
 extension ContactsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        contactsArray.count
+        return (isFiltering ? filtredArray.count :  contactsArray.count)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: idContactsCell, for: indexPath) as! ContactsTableViewCell
-        let model = contactsArray[indexPath.row]
+        let model = (isFiltering ? filtredArray[indexPath.row] : contactsArray[indexPath.row])
         cell.configure(model: model)
         return cell
     }
@@ -110,6 +122,19 @@ extension ContactsViewController: UITableViewDelegate, UITableViewDataSource {
             tableView.reloadData()
         }
         return UISwipeActionsConfiguration(actions: [deleteAction])
+    }
+}
+
+extension ContactsViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        
+        filterContentForSearchText(searchController.searchBar.text!)
+    }
+    
+    private func filterContentForSearchText(_ searchText: String) {
+        filtredArray = contactsArray.filter("contactsName CONTAINS[c] %@", searchText)
+        print(searcBarIsEmpty)
+        tableView.reloadData()
     }
 }
 
