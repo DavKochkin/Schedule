@@ -20,7 +20,7 @@ class ContactsTableViewCell: UITableViewCell {
     
     let phoneImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(systemName: "phone.fill")?.withRenderingMode(.alwaysTemplate)
+        imageView.image = UIImage(systemName: "phone.fill")
         imageView.tintColor = .systemGreen
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
@@ -60,8 +60,11 @@ class ContactsTableViewCell: UITableViewCell {
         phoneLabel.text = model.contactsPhone
         mailLabel.text = model.contactsMail
         
-        guard let data = model.contactsImage, let image = UIImage(data: data) else {return}
-        contactImageView.image = image
+        if let data = model.contactsImage, let image = UIImage(data: data) {
+            contactImageView.image = image
+        } else {
+            contactImageView.image = UIImage(systemName: "person.fill")
+        }
     }
     
    private func setConstraints() {
@@ -82,7 +85,7 @@ class ContactsTableViewCell: UITableViewCell {
             nameLabel.heightAnchor.constraint(equalToConstant: 21)
         ])
         
-        let stackView = UIStackView(arrangedSubviews: [phoneImageView, phoneLabel, mailImageView, mailLabel], axis: .horizontal, spacing: 3, distribution: .fillProportionally)
+       let stackView = UIStackView(arrangedSubviews: [phoneImageView, phoneLabel, mailImageView, mailLabel], axis: .horizontal, spacing: 3, distribution: .equalCentering)
         
         self.addSubview(stackView)
         NSLayoutConstraint.activate([
