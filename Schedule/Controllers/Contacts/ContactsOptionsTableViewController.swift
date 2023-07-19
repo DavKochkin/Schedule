@@ -13,12 +13,12 @@ class ContactsOptionsTableViewController: UITableViewController {
     let idOptionContactHeader = "idOptionContactHeader"
     
     let headerNameArray = ["NAME", "PHONE NUMBER", "MAIL", "TYPE", "CHOOSE IMAGE"]
-    var cellNameArray = ["Name", "Phone Number", "Mail", "Type", ""]
+    var cellNameArray = ["Name", "Phone", "Mail", "Type", ""]
     
-    private var imageIsChanged = false
+    var imageIsChanged = false
     var contactModel = ContactModel()
     var editModel = false
-    var dataIMage: Data?
+    var dataImage: Data?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,18 +43,19 @@ class ContactsOptionsTableViewController: UITableViewController {
         
         if cellNameArray[0] == "Name" || cellNameArray[3] == "Type" {
             alertOk(title: "Error", message: "Required fields: NAME and TYPE")
-        } else {
+        } else if editModel == false {
             setImageModel()
             setModel()
             
             RealmManager.shared.saveContactModel(model: contactModel)
             contactModel = ContactModel()
             
-            cellNameArray = ["Name", "Phone Number", "Mail", "Type", ""]
+            cellNameArray = ["Name", "Phone", "Mail", "Type", ""]
             alertOk(title: "Success", message: nil)
             tableView.reloadData()
-            
-            
+        } else {
+            setImageModel()
+            RealmManager.shared.updateContactModel(model: contactModel, nameArray: cellNameArray, imageData: dataImage)
         }
     }
     
@@ -69,7 +70,7 @@ class ContactsOptionsTableViewController: UITableViewController {
         contactModel.contactsPhone = cellNameArray[1]
         contactModel.contactsMail = cellNameArray[2]
         contactModel.contactsType = cellNameArray[3]
-        contactModel.contactsImage = dataIMage
+        contactModel.contactsImage = dataImage
     }
     
     @objc func setImageModel() {
@@ -79,12 +80,12 @@ class ContactsOptionsTableViewController: UITableViewController {
             
             let image = cell.backgroundViewCell.image
             guard let imageData = image?.pngData() else {return}
-            dataIMage = imageData
+            dataImage = imageData
             
             cell.backgroundViewCell.contentMode = .scaleAspectFit
             imageIsChanged = false
         } else {
-            dataIMage = nil
+            dataImage = nil
         }
     }
     
