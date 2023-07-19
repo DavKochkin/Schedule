@@ -89,18 +89,12 @@ class ContactsOptionsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: idOptionContactCell, for: indexPath) as! OptionsTableViewCell
         
-        if editModel {
-            cellNameArray = [
-                contactModel.contactsName,
-                contactModel.contactsPhone,
-                contactModel.contactsMail,
-                contactModel.contactsType,
-                ""
-            ]
-            
-            cell.cellContactsConfigure(nameArray: cellNameArray, indexPath: indexPath)
+        if editModel == false {
+            cell.cellContactsConfigure(nameArray: cellNameArray, indexPath: indexPath, image: nil)
+        } else if let data = contactModel.contactsImage, let image = UIImage(data: data) {
+            cell.cellContactsConfigure(nameArray: cellNameArray, indexPath: indexPath, image: image)
         } else {
-            cell.cellContactsConfigure(nameArray: cellNameArray, indexPath: indexPath)
+            cell.cellContactsConfigure(nameArray: cellNameArray, indexPath: indexPath, image: nil)
         }
         return cell
     }

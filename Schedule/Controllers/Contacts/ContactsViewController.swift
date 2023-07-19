@@ -91,6 +91,13 @@ class ContactsViewController: UIViewController {
         let contactOption = ContactsOptionsTableViewController()
         contactOption.contactModel = contactModel
         contactOption.editModel = true
+        contactOption.cellNameArray = [
+            contactModel.contactsName,
+            contactModel.contactsPhone,
+            contactModel.contactsMail,
+            contactModel.contactsType,
+            ""
+        ]
         navigationController?.pushViewController(contactOption, animated: true)
     }
 }
