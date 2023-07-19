@@ -16,12 +16,12 @@ class ContactsOptionsTableViewController: UITableViewController {
     let cellNameArray = ["Name", "Phone Number", "Mail", "Type", ""]
     
     private var imageIsChanged = false
-    private var contactModel = ContactModel()
+    var contactModel = ContactModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "Option Schedule"
+        title = "Options Contacts"
         
         tableView.dataSource = self
         tableView.delegate = self
@@ -34,6 +34,7 @@ class ContactsOptionsTableViewController: UITableViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save,
                                                             target: self,
                                                             action: #selector(saveButtonTapped))
+        print(contactModel)
     }
     
     @objc func saveButtonTapped() {
