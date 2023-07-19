@@ -25,7 +25,7 @@
 		041CC3812A5D5F4100CBBA04 /* AlertTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041CC3802A5D5F4100CBBA04 /* AlertTime.swift */; };
 		041CC3832A5D66C000CBBA04 /* AlertForCellName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041CC3822A5D66C000CBBA04 /* AlertForCellName.swift */; };
 		041CC3852A5D69D200CBBA04 /* ScheduleColorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041CC3842A5D69D200CBBA04 /* ScheduleColorsViewController.swift */; };
-		041CC3872A5D6AB100CBBA04 /* TeachersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041CC3862A5D6AB100CBBA04 /* TeachersViewController.swift */; };
+		041CC3872A5D6AB100CBBA04 /* TeachersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041CC3862A5D6AB100CBBA04 /* TeachersTableViewController.swift */; };
 		041CC38B2A5D862C00CBBA04 /* ColorsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041CC38A2A5D862C00CBBA04 /* ColorsTableViewCell.swift */; };
 		041CC38D2A5D8A1600CBBA04 /* TaskOptionsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041CC38C2A5D8A1600CBBA04 /* TaskOptionsTableView.swift */; };
 		041CC3912A5D8FC000CBBA04 /* TaskColorsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041CC3902A5D8FC000CBBA04 /* TaskColorsTableViewController.swift */; };
@@ -66,7 +66,7 @@
 		041CC3802A5D5F4100CBBA04 /* AlertTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertTime.swift; sourceTree = "<group>"; };
 		041CC3822A5D66C000CBBA04 /* AlertForCellName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertForCellName.swift; sourceTree = "<group>"; };
 		041CC3842A5D69D200CBBA04 /* ScheduleColorsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleColorsViewController.swift; sourceTree = "<group>"; };
-		041CC3862A5D6AB100CBBA04 /* TeachersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeachersViewController.swift; sourceTree = "<group>"; };
+		041CC3862A5D6AB100CBBA04 /* TeachersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeachersTableViewController.swift; sourceTree = "<group>"; };
 		041CC38A2A5D862C00CBBA04 /* ColorsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsTableViewCell.swift; sourceTree = "<group>"; };
 		041CC38C2A5D8A1600CBBA04 /* TaskOptionsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskOptionsTableView.swift; sourceTree = "<group>"; };
 		041CC3902A5D8FC000CBBA04 /* TaskColorsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskColorsTableViewController.swift; sourceTree = "<group>"; };
@@ -179,7 +179,7 @@
 			children = (
 				04140FB22A5EA4CF002D6188 /* ContactsViewController.swift */,
 				04140FB62A5EB12A002D6188 /* ContactsOptionsTableViewController.swift */,
-				041CC3862A5D6AB100CBBA04 /* TeachersViewController.swift */,
+				041CC3862A5D6AB100CBBA04 /* TeachersTableViewController.swift */,
 			);
 			path = Contacts;
 			sourceTree = "<group>";
@@ -449,7 +449,7 @@
 				044E3CA92A556CC900593BE1 /* AppDelegate.swift in Sources */,
 				041CC3652A5831CC00CBBA04 /* UIStackView.swift in Sources */,
 				04F4B4182A5FFC6F0090850A /* ScheduleModel.swift in Sources */,
-				041CC3872A5D6AB100CBBA04 /* TeachersViewController.swift in Sources */,
+				041CC3872A5D6AB100CBBA04 /* TeachersTableViewController.swift in Sources */,
 				04140FB52A5EA64C002D6188 /* ContactsTableViewCell.swift in Sources */,
 				041CC3832A5D66C000CBBA04 /* AlertForCellName.swift in Sources */,
 				041CC3692A583D2800CBBA04 /* UILabel.swift in Sources */,
