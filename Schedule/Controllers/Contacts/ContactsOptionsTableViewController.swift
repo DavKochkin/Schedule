@@ -13,10 +13,11 @@ class ContactsOptionsTableViewController: UITableViewController {
     let idOptionContactHeader = "idOptionContactHeader"
     
     let headerNameArray = ["NAME", "PHONE NUMBER", "MAIL", "TYPE", "CHOOSE IMAGE"]
-    let cellNameArray = ["Name", "Phone Number", "Mail", "Type", ""]
+    var cellNameArray = ["Name", "Phone Number", "Mail", "Type", ""]
     
     private var imageIsChanged = false
     var contactModel = ContactModel()
+    var editModel = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -87,7 +88,20 @@ class ContactsOptionsTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: idOptionContactCell, for: indexPath) as! OptionsTableViewCell
-        cell.cellContactsConfigure(nameArray: cellNameArray, indexPath: indexPath)
+        
+        if editModel {
+            cellNameArray = [
+                contactModel.contactsName,
+                contactModel.contactsPhone,
+                contactModel.contactsMail,
+                contactModel.contactsType,
+                ""
+            ]
+            
+            cell.cellContactsConfigure(nameArray: cellNameArray, indexPath: indexPath)
+        } else {
+            cell.cellContactsConfigure(nameArray: cellNameArray, indexPath: indexPath)
+        }
         return cell
     }
     

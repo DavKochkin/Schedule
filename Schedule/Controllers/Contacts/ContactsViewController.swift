@@ -90,6 +90,7 @@ class ContactsViewController: UIViewController {
     @objc func editingModel(contactModel: ContactModel) {
         let contactOption = ContactsOptionsTableViewController()
         contactOption.contactModel = contactModel
+        contactOption.editModel = true
         navigationController?.pushViewController(contactOption, animated: true)
     }
 }
