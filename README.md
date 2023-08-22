@@ -40,6 +40,7 @@ List of tasks for a specific lesson/subject.
 + The cell consists of the name of the subject and the task, as well as a button that can be pressed if the task is completed.
 + The + button that takes us to the task addition screen [TasksOptionsTableVC](https://github.com/DavKochkin/Schedule/blob/main/Schedule/Controllers/Tasks/TaskOptionsTableView.swift)
 
+![TaskVC](https://github.com/DavKochkin/Schedule/assets/122441539/23b03ffd-9713-48b0-b6b5-74abbe8303ac)
 
 ## ContactVC
 List of contacts related to studies. 
